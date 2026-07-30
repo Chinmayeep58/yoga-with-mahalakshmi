@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Pranayama Classes — Dr. Mahalakshmi Nagubandi</title>
-<meta name="description" content="Live online pranayama classes with Dr. Mahalakshmi Nagubandi. 30-minute sessions, 5 days a week, open to all age groups. ₹1,499/month.">
+<title>Yoga &amp; Naturopathy with Dr. Mahalakshmi Nagubandi</title>
+<meta name="description" content="Yoga and naturopathy guidance with Dr. Mahalakshmi Nagubandi. Latest addition: live online Pranayama classes, 30 minutes, 5 days a week, open to all age groups.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
   }
 
   *{ box-sizing: border-box; margin:0; padding:0; }
-  html{ scroll-behavior: smooth; }
+  html{ scroll-behavior: smooth; scrollbar-gutter: stable; }
   body{
     font-family: var(--body);
     background: var(--cream);
@@ -49,71 +49,64 @@
     text-transform: uppercase;
     font-weight: 600;
     color: var(--moss);
+    display:inline-block;
   }
   .eyebrow::before{ content:"◍  "; color: var(--gold); }
 
-  h1,h2,h3{ font-family: var(--display); color: var(--forest-deep); font-weight: 600; letter-spacing: -0.01em; }
+  h1,h2,h3{ font-family: var(--display); color: var(--forest-deep); font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
 
-  /* ---------- reveal on scroll ---------- */
-  .reveal{ opacity:0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.in{ opacity:1; transform: translateY(0); }
+  /* ---------- reveal on scroll (fade only, no movement to avoid layout jitter) ---------- */
+  .reveal{ opacity:0; transition: opacity .7s ease; }
+  .reveal.in{ opacity:1; }
   @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
+    .reveal{ opacity:1; transition:none; }
   }
 
   /* ---------- top nav ---------- */
   .nav{
     position: sticky; top:0; z-index: 50;
-    background: rgba(250,246,236,0.86);
+    background: rgba(250,246,236,0.9);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   .nav-inner{
     display:flex; align-items:center; justify-content: space-between;
-    padding: 16px 32px; max-width:1180px; margin:0 auto;
+    padding: 16px 32px; max-width:1180px; margin:0 auto; gap: 20px;
   }
-  .brand{ display:flex; align-items:center; gap:10px; font-family: var(--display); font-weight:600; font-size:1.15rem; color:var(--forest-deep); }
-  .brand-mark{ width:30px; height:30px; }
-  .nav-links{ display:flex; gap:30px; font-size:0.92rem; font-weight:500; }
-  .nav-links a{ color: var(--forest); position:relative; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family: var(--display); font-weight:600; font-size:1.08rem; color:var(--forest-deep); white-space:nowrap; }
+  .brand-mark{ width:28px; height:28px; flex-shrink:0; }
+  .nav-links{ display:flex; gap:28px; font-size:0.9rem; font-weight:500; }
+  .nav-links a{ color: var(--forest); position:relative; white-space:nowrap; }
   .nav-links a::after{ content:""; position:absolute; left:0; bottom:-4px; width:0; height:1.5px; background: var(--gold); transition: width .3s ease; }
   .nav-links a:hover::after{ width:100%; }
   .nav-cta{
     background: var(--forest-deep); color: var(--cream); padding: 10px 20px; border-radius: 999px;
-    font-size: 0.88rem; font-weight: 600; display:flex; align-items:center; gap:8px;
+    font-size: 0.86rem; font-weight: 600; display:flex; align-items:center; gap:8px; white-space:nowrap;
     box-shadow: var(--shadow);
   }
-  .nav-toggle{ display:none; }
 
-  /* ---------- hero ---------- */
+  /* ---------- hero (general yoga, static — no continuous animation) ---------- */
   .hero{
-    padding: 88px 0 60px;
+    padding: 80px 0 64px;
     background:
-      radial-gradient(ellipse 700px 500px at 85% -10%, rgba(110,143,108,0.22), transparent 60%),
-      radial-gradient(ellipse 500px 400px at -10% 90%, rgba(199,154,61,0.15), transparent 60%);
+      radial-gradient(ellipse 700px 500px at 85% -10%, rgba(110,143,108,0.2), transparent 60%),
+      radial-gradient(ellipse 500px 400px at -10% 90%, rgba(199,154,61,0.14), transparent 60%);
   }
   .hero-inner{
     display:grid; grid-template-columns: 1.1fr 0.9fr; gap:64px; align-items:center;
   }
   .hero-title{
-    font-size: clamp(2.6rem, 5.2vw, 4.4rem);
-    line-height: 1.02;
-    margin: 14px 0 4px;
-  }
-  .hero-title em{
-    font-style: italic;
-    font-weight: 500;
-    color: var(--moss);
-    display:block;
-    font-size: 0.85em;
-    margin-top: 2px;
+    font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+    line-height: 1.15;
+    margin: 16px 0 20px;
   }
   .hero-tagline{
     font-family: var(--display); font-style: italic; font-weight:500;
-    font-size: 1.35rem; color: var(--gold); margin: 22px 0 14px;
+    font-size: 1.25rem; color: var(--gold); margin: 0 0 16px;
+    line-height: 1.4;
   }
   .hero-sub{
-    font-size: 1.05rem; color: rgba(22,36,28,0.78); max-width: 460px; margin-bottom: 34px;
+    font-size: 1.02rem; color: rgba(22,36,28,0.78); max-width: 480px; margin-bottom: 32px;
   }
   .hero-actions{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
   .btn-primary{
@@ -131,82 +124,111 @@
   }
   .btn-ghost:hover{ background: rgba(30,58,43,0.06); }
 
-  /* ---------- breathing signature ---------- */
+  /* ---------- static hero art (lotus line art, no motion) ---------- */
+  .hero-art{
+    width: 100%; max-width: 380px; margin: 0 auto;
+    aspect-ratio: 1/1;
+  }
+
+  /* ---------- practice facts strip ---------- */
+  .facts{
+    background: var(--paper); border: 1px solid var(--line); border-radius: 24px;
+    box-shadow: var(--shadow);
+    display:grid; grid-template-columns: repeat(3,1fr);
+    margin-top: 8px;
+  }
+  .fact{ padding: 32px 24px; text-align:center; position:relative; }
+  .fact:not(:last-child)::after{
+    content:""; position:absolute; right:0; top:20%; bottom:20%; width:1px; background: var(--line);
+  }
+  .fact-icon{ width:42px; height:42px; margin: 0 auto 14px; color: var(--moss); }
+  .fact-num{ font-family: var(--display); font-weight:700; font-size:1.1rem; color: var(--forest-deep); line-height:1.3; }
+  .fact-label{ font-size: 0.82rem; letter-spacing:0.04em; color: rgba(22,36,28,0.65); text-transform: uppercase; margin-top: 4px; }
+
+  /* ---------- section heading ---------- */
+  .section-head{ text-align:center; max-width: 640px; margin: 0 auto 48px; }
+  .section-head h2{ font-size: clamp(1.8rem, 3vw, 2.4rem); margin-top:12px; }
+  .section-head p{ color: rgba(22,36,28,0.68); margin-top:16px; font-size:1.02rem; }
+  .rule{ display:flex; align-items:center; gap:16px; justify-content:center; }
+  .rule span{ height:1px; width:60px; background: var(--line); }
+
+  /* ---------- latest addition banner ---------- */
+  .latest{ padding: 88px 0 40px; }
+  .latest-badge{
+    display:inline-flex; align-items:center; gap:8px;
+    background: var(--gold); color: var(--forest-deep);
+    padding: 7px 16px; border-radius: 999px; font-size:0.76rem; font-weight:700;
+    letter-spacing: 0.1em; text-transform: uppercase; margin-bottom:18px;
+  }
+  .latest-panel{
+    background: var(--paper); border: 1px solid var(--line); border-radius: 32px;
+    box-shadow: var(--shadow);
+    padding: 56px;
+    display:grid; grid-template-columns: 1fr 0.85fr; gap: 56px; align-items:center;
+  }
+  .latest-panel h3{ font-size: clamp(1.8rem, 3vw, 2.5rem); line-height:1.2; margin-bottom:14px; }
+  .latest-panel .hero-tagline{ margin-bottom:14px; }
+  .latest-panel p.desc{ color: rgba(22,36,28,0.75); margin-bottom: 28px; max-width: 480px; }
+
+  /* ---------- contained breathing visual (fixed size, gentle, no reflow) ---------- */
   .breath-stage{
-    position: relative; aspect-ratio: 1/1; max-width: 420px; margin: 0 auto;
+    position: relative; width: 260px; height: 260px; margin: 0 auto;
     display:flex; align-items:center; justify-content:center;
   }
   .breath-ring{
-    position:absolute; border-radius: 50%; border: 1.5px solid var(--sage);
-    opacity: 0.55;
+    position:absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--sage);
+    opacity: 0.5;
+    animation: breathe 8s ease-in-out infinite;
+    transform-origin: center;
+    will-change: transform, opacity;
   }
-  .breath-ring.r1{ inset: 0; animation: breathe 12s ease-in-out infinite; }
-  .breath-ring.r2{ inset: 12%; animation: breathe 12s ease-in-out infinite; animation-delay: -0.6s; border-color: var(--gold-soft); }
-  .breath-ring.r3{ inset: 24%; animation: breathe 12s ease-in-out infinite; animation-delay: -1.2s; }
   .breath-core{
-    position:relative; width: 46%; height:46%; border-radius:50%;
+    position:relative; width: 132px; height: 132px; border-radius:50%;
     background: radial-gradient(circle at 35% 30%, #ffffff, var(--cream-deep) 60%, var(--sage) 140%);
     box-shadow: inset 0 6px 18px rgba(255,255,255,0.7), 0 20px 40px -14px rgba(30,58,43,0.35);
-    animation: core-breathe 12s ease-in-out infinite;
+    animation: core-breathe 8s ease-in-out infinite;
+    transform-origin: center;
+    will-change: transform;
     display:flex; align-items:center; justify-content:center; text-align:center;
   }
   .breath-label{
     font-family: var(--display); font-style: italic; color: var(--forest-deep);
-    font-size: 1.05rem; font-weight:500;
+    font-size: 1rem; font-weight:500;
   }
   @keyframes breathe{
-    0%{ transform: scale(0.72); opacity:0.35; }
-    33%{ transform: scale(1); opacity:0.75; }
-    50%{ transform: scale(1); opacity:0.75; }
-    83%{ transform: scale(0.72); opacity:0.35; }
-    100%{ transform: scale(0.72); opacity:0.35; }
+    0%, 100%{ transform: scale(0.82); opacity:0.3; }
+    50%{ transform: scale(1); opacity:0.65; }
   }
   @keyframes core-breathe{
-    0%{ transform: scale(0.85); }
-    33%{ transform: scale(1.05); }
-    50%{ transform: scale(1.05); }
-    83%{ transform: scale(0.85); }
-    100%{ transform: scale(0.85); }
+    0%, 100%{ transform: scale(0.9); }
+    50%{ transform: scale(1.04); }
   }
   @media (prefers-reduced-motion: reduce){
     .breath-ring, .breath-core{ animation: none; }
   }
 
-  /* ---------- facts strip ---------- */
-  .facts{
-    background: var(--paper); border: 1px solid var(--line); border-radius: 24px;
-    box-shadow: var(--shadow);
-    display:grid; grid-template-columns: repeat(3,1fr);
-    margin-top: 10px;
-  }
-  .fact{ padding: 34px 24px; text-align:center; position:relative; }
-  .fact:not(:last-child)::after{
-    content:""; position:absolute; right:0; top:20%; bottom:20%; width:1px; background: var(--line);
-  }
-  .fact-icon{ width:44px; height:44px; margin: 0 auto 14px; color: var(--moss); }
-  .fact-num{ font-family: var(--display); font-weight:700; font-size:1.15rem; color: var(--forest-deep); }
-  .fact-label{ font-size: 0.85rem; letter-spacing:0.04em; color: rgba(22,36,28,0.65); text-transform: uppercase; margin-top: 2px; }
-
-  /* ---------- section heading ---------- */
-  .section-head{ text-align:center; max-width: 640px; margin: 0 auto 48px; }
-  .section-head h2{ font-size: clamp(1.9rem, 3.2vw, 2.6rem); margin-top:10px; }
-  .section-head p{ color: rgba(22,36,28,0.68); margin-top:14px; font-size:1.02rem; }
-  .rule{ display:flex; align-items:center; gap:16px; justify-content:center; }
-  .rule span{ height:1px; width:60px; background: var(--line); }
-
   /* ---------- benefits ---------- */
-  .benefits{ padding: 96px 0 40px; }
+  .benefits{ padding: 56px 0 40px; }
   .benefit-grid{
-    display:grid; grid-template-columns: repeat(5, 1fr); gap: 20px;
+    display:grid; grid-template-columns: repeat(5, 1fr); gap: 18px;
   }
   .benefit-card{
-    background: var(--paper); border:1px solid var(--line); border-radius:18px;
-    padding: 30px 18px; text-align:center;
+    background: var(--cream-deep); border:1px solid var(--line); border-radius:18px;
+    padding: 26px 16px; text-align:center;
     transition: transform .3s ease, box-shadow .3s ease;
   }
   .benefit-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow); }
-  .benefit-icon{ width:40px; height:40px; margin:0 auto 16px; color: var(--gold); }
-  .benefit-card h3{ font-size: 0.98rem; font-family: var(--body); font-weight:600; color: var(--forest-deep); }
+  .benefit-icon{ width:36px; height:36px; margin:0 auto 14px; color: var(--gold); }
+  .benefit-card h3{ font-size: 0.92rem; font-family: var(--body); font-weight:600; color: var(--forest-deep); line-height:1.4; }
+
+  /* ---------- pricing (inside latest section) ---------- */
+  .price-strip{
+    margin-top: 32px; display:flex; align-items:center; gap: 24px; flex-wrap:wrap;
+    padding-top: 28px; border-top: 1px solid var(--line);
+  }
+  .price-tag-inline{ display:flex; align-items:baseline; gap:6px; }
+  .price-tag-inline .amt{ font-family: var(--display); font-weight:700; font-size: 2.1rem; color:var(--forest-deep); }
+  .price-tag-inline .per{ font-size:0.85rem; color: rgba(22,36,28,0.6); }
 
   /* ---------- gallery ---------- */
   .gallery{ padding: 96px 0 40px; }
@@ -214,97 +236,81 @@
     display:grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
   }
   .gallery-grid .g1{ grid-column: span 2; grid-row: span 2; }
-  .gplaceholder{
+  .gimg{
     border-radius: 20px; position:relative; overflow:hidden;
-    display:flex; align-items:flex-end; padding: 18px;
-    min-height: 160px;
-    border: 1px dashed var(--sage);
-    background: linear-gradient(160deg, var(--cream-deep), var(--cream) 60%);
+    min-height: 160px; border: 1px solid var(--line);
+    box-shadow: var(--shadow);
   }
-  .gplaceholder::before{
+  .gimg img{
+    width:100%; height:100%; object-fit: cover; display:block;
+    min-height: 160px; transition: transform .5s ease;
+  }
+  .gimg:hover img{ transform: scale(1.05); }
+  .gimg::after{
     content:""; position:absolute; inset:0;
-    background: radial-gradient(circle at 30% 20%, rgba(110,143,108,0.28), transparent 55%);
+    background: linear-gradient(to top, rgba(20,42,31,0.55), transparent 45%);
   }
-  .gplaceholder .g-icon{ width:30px; height:30px; color: var(--sage); margin-bottom:8px; }
-  .gplaceholder span{ position:relative; font-size:0.82rem; color: var(--moss); font-weight:600; }
-  .g1{ min-height: 100%; }
+  .gimg-cap{
+    position:absolute; left:16px; bottom:14px; z-index:1;
+    font-size:0.78rem; font-weight:600; color: var(--cream);
+    letter-spacing: 0.02em;
+  }
+  .g1{ min-height: 340px; }
+  .g1 img{ min-height: 340px; }
 
-  /* ---------- testimonials ---------- */
-  .testimonials{ padding: 96px 0 40px; background: var(--forest-deep); }
-  .testimonials .section-head h2, .testimonials .eyebrow{ color: var(--cream); }
-  .testimonials .eyebrow{ color: var(--gold-soft); }
-  .testimonials .section-head p{ color: rgba(250,246,236,0.68); }
-  .testimonials .rule span{ background: rgba(250,246,236,0.2); }
+  /* ---------- reviews ---------- */
+  .reviews{ padding: 96px 0 40px; background: var(--forest-deep); }
+  .reviews .section-head h2, .reviews .eyebrow{ color: var(--cream); }
+  .reviews .eyebrow{ color: var(--gold-soft); }
+  .reviews .section-head p{ color: rgba(250,246,236,0.68); }
+  .reviews .rule span{ background: rgba(250,246,236,0.2); }
   .t-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
   .t-card{
     background: rgba(250,246,236,0.06); border: 1px solid rgba(250,246,236,0.14);
-    border-radius: 20px; padding: 30px 26px;
+    border-radius: 20px; padding: 28px 24px;
+    display:flex; flex-direction:column;
   }
-  .t-stars{ color: var(--gold-soft); font-size: 0.95rem; letter-spacing:2px; margin-bottom: 14px; }
-  .t-quote{ color: rgba(250,246,236,0.88); font-size: 0.98rem; line-height:1.65; min-height: 96px; }
+  .t-stars{ color: var(--gold-soft); font-size: 0.9rem; letter-spacing:2px; margin-bottom: 14px; }
+  .t-quote{ color: rgba(250,246,236,0.88); font-size: 0.96rem; line-height:1.65; flex-grow:1; }
   .t-person{ display:flex; align-items:center; gap:12px; margin-top: 22px; }
   .t-avatar{
-    width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center;
     font-family: var(--display); font-weight:600; color: var(--forest-deep);
     background: var(--gold-soft); flex-shrink:0;
   }
-  .t-name{ font-weight:600; color: var(--cream); font-size: 0.92rem; }
-  .t-role{ font-size: 0.8rem; color: rgba(250,246,236,0.55); }
+  .t-name{ font-weight:600; color: var(--cream); font-size: 0.9rem; line-height:1.4; }
+  .t-role{ font-size: 0.78rem; color: rgba(250,246,236,0.55); line-height:1.4; }
   .t-note{
-    text-align:center; margin-top: 40px; font-size: 0.82rem; color: rgba(250,246,236,0.4);
+    text-align:center; margin-top: 40px; font-size: 0.8rem; color: rgba(250,246,236,0.4);
   }
-
-  /* ---------- pricing ---------- */
-  .pricing{ padding: 96px 0 40px; }
-  .price-card{
-    background: linear-gradient(135deg, var(--forest-deep), var(--forest));
-    border-radius: 28px; padding: 56px; color: var(--cream);
-    display:grid; grid-template-columns: auto 1fr; gap: 56px; align-items:center;
-    box-shadow: var(--shadow);
-    position:relative; overflow:hidden;
-  }
-  .price-card::before{
-    content:""; position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%;
-    background: radial-gradient(circle, rgba(199,154,61,0.25), transparent 70%);
-  }
-  .price-tag{ text-align:center; position:relative; }
-  .price-tag .cur{ font-size: 1.2rem; vertical-align: top; color: var(--gold-soft); }
-  .price-tag .amt{ font-family: var(--display); font-weight:700; font-size: 3.2rem; color:var(--cream); line-height:1; }
-  .price-tag .per{ display:block; margin-top:8px; font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color: rgba(250,246,236,0.6); }
-  .price-copy h3{ color: var(--cream); font-size: 1.5rem; margin-bottom: 10px; }
-  .price-copy p{ color: rgba(250,246,236,0.72); margin-bottom: 22px; max-width: 480px; }
-  .price-copy .btn-primary{ background: var(--gold); color: var(--forest-deep); }
-  .price-copy .btn-primary:hover{ background: var(--gold-soft); }
 
   /* ---------- footer ---------- */
   footer{ background: var(--forest-deep); color: var(--cream); margin-top: 40px; }
   .foot-inner{ padding: 56px 0 40px; text-align:center; }
-  footer h2{ color: var(--cream); font-size: 1.7rem; }
-  footer .role{ color: var(--gold-soft); font-family: var(--display); font-style: italic; margin-top: 6px; font-size:1.05rem; }
+  footer h2{ color: var(--cream); font-size: 1.6rem; line-height:1.3; }
+  footer .role{ color: var(--gold-soft); font-family: var(--display); font-style: italic; margin-top: 8px; font-size:1.02rem; }
   .foot-phone{
     margin-top: 22px; display:inline-flex; align-items:center; gap:10px;
-    font-size: 1.1rem; font-weight:600; letter-spacing: 0.03em;
+    font-size: 1.05rem; font-weight:600; letter-spacing: 0.03em;
   }
-  .foot-phone svg{ width:18px; height:18px; color: var(--gold-soft); }
-  .foot-tagline{ margin-top: 18px; font-size: 0.82rem; letter-spacing:0.14em; text-transform:uppercase; color: rgba(250,246,236,0.55); }
-  .foot-divider{ height:1px; background: rgba(250,246,236,0.12); margin: 34px 0; }
-  .foot-bottom{ font-size: 0.78rem; color: rgba(250,246,236,0.4); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .foot-phone svg{ width:18px; height:18px; color: var(--gold-soft); flex-shrink:0; }
+  .foot-tagline{ margin-top: 18px; font-size: 0.8rem; letter-spacing:0.14em; text-transform:uppercase; color: rgba(250,246,236,0.55); }
+  .foot-divider{ height:1px; background: rgba(250,246,236,0.12); margin: 32px 0; }
+  .foot-bottom{ font-size: 0.76rem; color: rgba(250,246,236,0.4); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 
   /* ---------- whatsapp float ---------- */
   .wa-float{
     position: fixed; bottom: 24px; right: 24px; z-index: 60;
-    width: 58px; height:58px; border-radius:50%;
+    width: 56px; height:56px; border-radius:50%;
     background: var(--moss); display:flex; align-items:center; justify-content:center;
     box-shadow: 0 14px 30px -10px rgba(20,42,31,0.5);
-    animation: pop-in 0.6s ease 1.4s both;
   }
-  .wa-float svg{ width:26px; height:26px; color:#fff; }
-  @keyframes pop-in{ from{ transform: scale(0); } to{ transform: scale(1); } }
+  .wa-float svg{ width:24px; height:24px; color:#fff; }
 
   /* ---------- responsive ---------- */
   @media (max-width: 900px){
     .hero-inner{ grid-template-columns: 1fr; gap:40px; }
-    .breath-stage{ order:-1; max-width: 280px; }
+    .hero-art{ order:-1; max-width: 240px; }
     .facts{ grid-template-columns: 1fr; }
     .fact:not(:last-child)::after{ display:none; }
     .fact:not(:last-child){ border-bottom: 1px solid var(--line); }
@@ -312,7 +318,8 @@
     .t-grid{ grid-template-columns: 1fr; }
     .gallery-grid{ grid-template-columns: repeat(2,1fr); }
     .gallery-grid .g1{ grid-column: span 2; grid-row: span 1; min-height:160px; }
-    .price-card{ grid-template-columns: 1fr; text-align:center; padding: 40px 28px; }
+    .latest-panel{ grid-template-columns: 1fr; padding: 32px 24px; text-align:center; }
+    .price-strip{ justify-content:center; }
     .nav-links{ display:none; }
   }
 </style>
@@ -322,69 +329,125 @@
 <nav class="nav">
   <div class="nav-inner">
     <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" stroke="#1E3A2B" stroke-width="1.2"/><path d="M20 11c-3 3-3 7 0 9-3 2-3 6 0 9 3-3 3-7 0-9 3-2 3-6 0-9Z" fill="#6E8F6C"/></svg>
-      Pranayama with Dr. Mahalakshmi
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="21" r="18.5" stroke="#E4C878" stroke-width="1"/>
+        <path d="M20 26C15 22 13 16 15 11c3 2 5 7 5 15Z" fill="#6E8F6C"/>
+        <path d="M20 26C25 22 27 16 25 11c-3 2-5 7-5 15Z" fill="#3F6B4A"/>
+        <path d="M20 26c-2-6-2-11 0-16 2 5 2 10 0 16Z" fill="#C79A3D"/>
+        <path d="M12 27c3 3 5 4 8 4s5-1 8-4" stroke="#1E3A2B" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+      </svg>
+      Dr. Mahalakshmi Nagubandi
     </div>
     <div class="nav-links">
-      <a href="#benefits">Benefits</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Reviews</a>
-      <a href="#pricing">Fees</a>
+      <a href="#about">Yoga Practice</a>
+      <a href="#latest">Latest: Pranayama</a>
+      <a href="#reviews">Reviews</a>
     </div>
     <a class="nav-cta" href="https://wa.me/919177220077" target="_blank" rel="noopener">DM to Join</a>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" id="about">
   <div class="wrap hero-inner">
     <div>
-      <span class="eyebrow">Online Course · Starting Soon</span>
-      <h1 class="hero-title">Pranayama<em>Classes</em></h1>
-      <p class="hero-tagline">Breathe better. Live better.</p>
-      <p class="hero-sub">Transform your health with the power of your breath — live, guided sessions from the comfort of your home, led by a certified Yoga &amp; Naturopathy practitioner.</p>
+      <span class="eyebrow">Yoga &amp; Naturopathy</span>
+      <h1 class="hero-title">A steady practice for a calmer, stronger you.</h1>
+      <p class="hero-tagline">Guiding you to a healthier, happier you.</p>
+      <p class="hero-sub">Dr. Mahalakshmi Nagubandi is a certified Yoga &amp; Naturopathy practitioner helping students of every age build strength, flexibility, and calm through guided, live sessions — from the comfort of home.</p>
       <div class="hero-actions">
         <a class="btn-primary" href="https://wa.me/919177220077" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l1-1.1c.2-.3.4-.2.6-.1.2.1 1.6.7 1.9.9.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
-          DM for Batch Details
+          DM to Join a Class
         </a>
-        <a class="btn-ghost" href="#pricing">See Fees</a>
+        <a class="btn-ghost" href="#latest">See the Latest Batch</a>
       </div>
     </div>
 
-    <div class="breath-stage" aria-hidden="true">
-      <div class="breath-ring r1"></div>
-      <div class="breath-ring r2"></div>
-      <div class="breath-ring r3"></div>
-      <div class="breath-core"><span class="breath-label">Inhale</span></div>
-    </div>
+    <svg class="hero-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="95" stroke="#E4C878" stroke-width="1" opacity="0.5"/>
+      <circle cx="100" cy="100" r="70" stroke="#6E8F6C" stroke-width="1" opacity="0.6"/>
+      <g stroke="#1E3A2B" stroke-width="1.3" fill="none" stroke-linecap="round">
+        <path d="M100 60c-14 0-24 12-24 26 0 12 7 18 12 24-9 4-16 13-16 24 0 6 3 10 5 12M100 60c14 0 24 12 24 26 0 12-7 18-12 24 9 4 16 13 16 24 0 6-3 10-5 12"/>
+        <path d="M100 60V40M100 146c0 10 0 18-0 24"/>
+        <path d="M76 86c-10-4-18-13-20-24M124 86c10-4 18-13 20-24M78 110c-12 2-22 10-27 20M122 110c12 2 22 10 27 20"/>
+      </g>
+      <circle cx="100" cy="52" r="6" fill="#C79A3D"/>
+    </svg>
   </div>
 
   <div class="wrap" style="margin-top:56px;">
     <div class="facts reveal">
       <div class="fact">
-        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 3c-3 0-4 3-4 6 0 4 1 8 4 9 1 .3 1-1 1-3V6c0-2 0-3-1-3Z"/><path d="M15 3c3 0 4 3 4 6 0 4-1 8-4 9-1 .3-1-1-1-3V6c0-2 0-3 1-3Z"/><path d="M12 8v9"/></svg>
-        <div class="fact-num">30-Minute</div>
-        <div class="fact-label">Live Sessions</div>
-      </div>
-      <div class="fact">
-        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/><circle cx="8" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="14" r="1" fill="currentColor" stroke="none"/></svg>
-        <div class="fact-num">5 Days</div>
-        <div class="fact-label">A Week</div>
+        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3a6 6 0 0 0-6 6c0 2.5 1.3 4 2.3 5.2.5.6.7 1 .7 1.8v1h6v-1c0-.8.2-1.2.7-1.8C16.7 13 18 11.5 18 9a6 6 0 0 0-6-6Z"/><path d="M10 20h4"/></svg>
+        <div class="fact-num">Yoga</div>
+        <div class="fact-label">&amp; Naturopathy Guidance</div>
       </div>
       <div class="fact">
         <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c.5-3.5 2.7-5.5 5.5-5.5s5 2 5.5 5.5"/><path d="M14.5 20c.4-2.7 1.9-4.4 3.9-4.4 2 0 3.5 1.7 3.9 4.4"/></svg>
         <div class="fact-num">Open to All</div>
         <div class="fact-label">Age Groups</div>
       </div>
+      <div class="fact">
+        <svg class="fact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+        <div class="fact-num">Live Online</div>
+        <div class="fact-label">Sessions</div>
+      </div>
     </div>
   </div>
 </header>
 
-<section class="benefits wrap" id="benefits">
+<section class="latest wrap" id="latest">
+  <div class="section-head reveal">
+    <span class="latest-badge">✦ Latest Addition</span>
+    <h2>Online Pranayama Classes</h2>
+    <p>The newest batch to join the practice — a focused, breath-first course now open for registration.</p>
+  </div>
+
+  <div class="latest-panel reveal">
+    <div>
+      <p class="hero-tagline">Breathe better. Live better.</p>
+      <h3>Transform your health with the power of your breath.</h3>
+      <p class="desc">Live, guided pranayama sessions designed to fit into any schedule — simple enough for beginners, effective enough for anyone looking to build a steady breathing practice.</p>
+
+      <div class="benefit-grid" style="grid-template-columns: repeat(3,1fr);">
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 3c-3 0-4 3-4 6 0 4 1 8 4 9 1 .3 1-1 1-3V6c0-2 0-3-1-3Z"/><path d="M15 3c3 0 4 3 4 6 0 4-1 8-4 9-1 .3-1-1-1-3V6c0-2 0-3 1-3Z"/><path d="M12 8v9"/></svg>
+          <h3>30-Minute Live Sessions</h3>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <h3>5 Days a Week</h3>
+        </div>
+        <div class="benefit-card">
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M2.5 20c.5-3.5 2.7-5.5 5.5-5.5s5 2 5.5 5.5"/><path d="M14.5 20c.4-2.7 1.9-4.4 3.9-4.4 2 0 3.5 1.7 3.9 4.4"/></svg>
+          <h3>Open to All Ages</h3>
+        </div>
+      </div>
+
+      <div class="price-strip">
+        <div class="price-tag-inline">
+          <span class="amt">₹1,499</span>
+          <span class="per">/ month</span>
+        </div>
+        <a class="btn-primary" href="https://wa.me/919177220077" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l1-1.1c.2-.3.4-.2.6-.1.2.1 1.6.7 1.9.9.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+          DM for Batch Details
+        </a>
+      </div>
+    </div>
+
+    <div class="breath-stage" aria-hidden="true">
+      <div class="breath-ring"></div>
+      <div class="breath-core"><span class="breath-label">Inhale</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits wrap">
   <div class="section-head reveal">
     <div class="rule"><span></span><span class="eyebrow">Why Pranayama</span><span></span></div>
-    <h2>Benefits of Pranayama</h2>
-    <p>Five minutes into your first session, you'll notice the shift. Five weeks in, it becomes the calmest part of your day.</p>
+    <h2>Benefits of the Practice</h2>
+    <p>Five minutes into the first session, you'll notice the shift. Five weeks in, it becomes the calmest part of your day.</p>
   </div>
   <div class="benefit-grid reveal">
     <div class="benefit-card">
@@ -414,41 +477,44 @@
   <div class="section-head reveal">
     <div class="rule"><span></span><span class="eyebrow">Inside a Session</span><span></span></div>
     <h2>A Glimpse of the Practice</h2>
-    <p>Photo spots ready for your own session stills, batch screenshots, or candid student moments — swap these in before you publish.</p>
+    <p>Photo spots ready for your own class stills, batch screenshots, or candid student moments — swap these in before you publish.</p>
   </div>
   <div class="gallery-grid reveal">
-    <div class="gplaceholder g1">
-      <div>
-        <svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5.5-5-4 4-2-2L3 18"/></svg>
-        <span>Add a live-session photo</span>
-      </div>
+    <div class="gimg g1">
+      <img src="https://images.pexels.com/photos/14242904/pexels-photo-14242904.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Two students practicing yoga breathing exercises together" loading="lazy">
+      <span class="gimg-cap">Batch practice</span>
     </div>
-    <div class="gplaceholder">
-      <div><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5.5-5-4 4-2-2L3 18"/></svg><span>Add a batch photo</span></div>
+    <div class="gimg">
+      <img src="https://images.pexels.com/photos/6958256/pexels-photo-6958256.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Close-up of a student practicing a breathing technique" loading="lazy">
+      <span class="gimg-cap">Pranayama focus</span>
     </div>
-    <div class="gplaceholder">
-      <div><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5.5-5-4 4-2-2L3 18"/></svg><span>Add a practice photo</span></div>
+    <div class="gimg">
+      <img src="https://images.pexels.com/photos/32794951/pexels-photo-32794951.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Student practicing outdoor yoga meditation in a natural setting" loading="lazy">
+      <span class="gimg-cap">Morning practice</span>
     </div>
-    <div class="gplaceholder">
-      <div><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5.5-5-4 4-2-2L3 18"/></svg><span>Add a student photo</span></div>
+    <div class="gimg">
+      <img src="https://images.pexels.com/photos/5992855/pexels-photo-5992855.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Student seated in a meditation pose on a yoga mat" loading="lazy">
+      <span class="gimg-cap">Live session</span>
     </div>
-    <div class="gplaceholder">
-      <div><svg class="g-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5.5-5-4 4-2-2L3 18"/></svg><span>Add Dr. Mahalakshmi's photo</span></div>
+    <div class="gimg">
+      <img src="https://images.pexels.com/photos/6293249/pexels-photo-6293249.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Senior student practicing yoga meditation outdoors" loading="lazy">
+      <span class="gimg-cap">Open to all ages</span>
     </div>
   </div>
+  <p class="t-note" style="margin-top:18px; color: rgba(22,36,28,0.45);">Stock photos shown as placeholders — swap in real class photos whenever you're ready.</p>
 </section>
 
-<section class="testimonials" id="testimonials">
+<section class="reviews" id="reviews">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="rule"><span></span><span class="eyebrow">Student Voices</span><span></span></div>
-      <h2>What Students Are Saying</h2>
-      <p>Real feedback shapes trust more than any brochure. Replace these with quotes from your own batch once they roll in.</p>
+      <h2>Yoga Reviews</h2>
+      <p>Real feedback from students across the full practice — mat classes, breathwork, and naturopathy guidance alike.</p>
     </div>
     <div class="t-grid reveal">
       <div class="t-card">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"I used to feel breathless climbing two flights of stairs. Six weeks of morning pranayama with Dr. Mahalakshmi and I genuinely feel lighter, calmer, and more in control of my day."</p>
+        <p class="t-quote">"I joined for flexibility and stayed for how much calmer I feel. Dr. Mahalakshmi corrects your posture gently but precisely — you can tell she's watching every student, not just teaching to a screen."</p>
         <div class="t-person">
           <div class="t-avatar">R</div>
           <div><div class="t-name">Ramya S.</div><div class="t-role">Working professional, Hyderabad</div></div>
@@ -456,7 +522,7 @@
       </div>
       <div class="t-card">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"My father is 68 and was hesitant about anything 'online.' Dr. Mahalakshmi's pace and patience made it easy for him. He hasn't missed a single class in two months."</p>
+        <p class="t-quote">"My father is 68 and was hesitant about anything 'online.' Her pace and patience made it easy for him. Two months in, his knee stiffness has noticeably eased."</p>
         <div class="t-person">
           <div class="t-avatar">K</div>
           <div><div class="t-name">Kavitha N.</div><div class="t-role">Homemaker, Vijayawada</div></div>
@@ -464,31 +530,38 @@
       </div>
       <div class="t-card">
         <div class="t-stars">★★★★★</div>
-        <p class="t-quote">"Just 30 minutes, 5 days a week, and my sleep has improved more than any supplement I've tried. The sessions are simple to follow and genuinely relaxing."</p>
+        <p class="t-quote">"What stood out was the naturopathy advice alongside the asanas — small diet and lifestyle tweaks that actually made a difference to my energy through the day."</p>
         <div class="t-person">
           <div class="t-avatar">A</div>
           <div><div class="t-name">Arjun P.</div><div class="t-role">Software Engineer, Bengaluru</div></div>
         </div>
       </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"I've tried three other online yoga teachers and none stuck. This is the first class I've shown up to five days a week without feeling like a chore."</p>
+        <div class="t-person">
+          <div class="t-avatar">S</div>
+          <div><div class="t-name">Sindhu M.</div><div class="t-role">College student, Vizag</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Just 30 minutes, 5 days a week of the pranayama batch, and my sleep has improved more than any supplement I've tried. Simple to follow and genuinely relaxing."</p>
+        <div class="t-person">
+          <div class="t-avatar">P</div>
+          <div><div class="t-name">Praveen K.</div><div class="t-role">Pranayama batch, July 2026</div></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">"Warm, encouraging, and never rushed. My mother and I take the class together now — it's become our shared morning routine."</p>
+        <div class="t-person">
+          <div class="t-avatar">D</div>
+          <div><div class="t-name">Divya R.</div><div class="t-role">Marketing consultant, Chennai</div></div>
+        </div>
+      </div>
     </div>
-    <p class="t-note">Sample testimonials shown as placeholders — swap in real student reviews before publishing.</p>
-  </div>
-</section>
-
-<section class="pricing wrap" id="pricing">
-  <div class="price-card reveal">
-    <div class="price-tag">
-      <div class="amt"><span class="cur">₹</span>1,499</div>
-      <span class="per">per month</span>
-    </div>
-    <div class="price-copy">
-      <h3>Take just 30 minutes a day to invest in your health.</h3>
-      <p>Live batches run 5 days a week with a certified Yoga &amp; Naturopathy practitioner. Open to all age groups — no prior experience needed.</p>
-      <a class="btn-primary" href="https://wa.me/919177220077" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.4-2 1.5-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1.1-2.5c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5.2.5.8 1.9.8 2 .1.2.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.2-.3.3-.1.6.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.2.5.1.6-.1l1-1.1c.2-.3.4-.2.6-.1.2.1 1.6.7 1.9.9.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
-        DM Me for Batch Details &amp; Registration
-      </a>
-    </div>
+    <p class="t-note">Sample reviews shown as placeholders — swap in real student feedback before publishing.</p>
   </div>
 </section>
 
@@ -504,7 +577,7 @@
     <div class="foot-divider"></div>
     <div class="foot-bottom">
       <span>© 2026 Dr. Mahalakshmi Nagubandi</span>
-      <span>Online Pranayama Classes</span>
+      <span>Yoga &amp; Naturopathy Practice</span>
     </div>
   </div>
 </footer>
@@ -514,14 +587,12 @@
 </a>
 
 <script>
-  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
   revealEls.forEach(el => io.observe(el));
 
-  // Breathing label cycles with the CSS animation (12s: ~4s inhale, 4s hold, 4s exhale)
   const label = document.querySelector('.breath-label');
   const phases = ['Inhale', 'Hold', 'Exhale'];
   let phase = 0;
@@ -529,7 +600,7 @@
     setInterval(() => {
       phase = (phase + 1) % phases.length;
       label.textContent = phases[phase];
-    }, 4000);
+    }, 2666);
   }
 </script>
 
